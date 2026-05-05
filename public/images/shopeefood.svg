@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="220" viewBox="0 0 520 220" role="img" aria-labelledby="title">
+  <title id="title">ShopeeFood</title>
+  <rect width="520" height="220" rx="24" fill="#ee4d2d"/>
+  <circle cx="98" cy="110" r="50" fill="#fff"/>
+  <path d="M80 104h36v14H80zM91 82h14v56H91z" fill="#ee4d2d"/>
+  <text x="170" y="103" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Shopee</text>
+  <text x="170" y="150" fill="#fff7ed" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Food</text>
+</svg>
