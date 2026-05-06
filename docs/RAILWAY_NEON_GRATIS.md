@@ -57,9 +57,9 @@ LOG_LEVEL=debug
 DB_CONNECTION=pgsql
 DB_URL=ISI_CONNECTION_STRING_DARI_NEON
 
-SESSION_DRIVER=database
-CACHE_STORE=database
-QUEUE_CONNECTION=database
+SESSION_DRIVER=file
+CACHE_STORE=file
+QUEUE_CONNECTION=sync
 ```
 
 Untuk membuat `APP_KEY`, buka terminal di folder project lokal:
@@ -113,4 +113,4 @@ Kalau sukses, website bisa dibuka orang lain memakai link Railway.
 ## Jika Error
 - Kalau muncul error database, cek `DB_URL` dari Neon.
 - Kalau muncul error key, cek `APP_KEY`.
-- Kalau tabel belum ada, pastikan pre-deploy command sudah diisi.
+- Kalau tabel `products` belum ada, pastikan pre-deploy command sudah diisi.

@@ -38,9 +38,9 @@ LOG_LEVEL=debug
 DB_CONNECTION=pgsql
 DB_URL=${{Postgres.DATABASE_URL}}
 
-SESSION_DRIVER=database
-CACHE_STORE=database
-QUEUE_CONNECTION=database
+SESSION_DRIVER=file
+CACHE_STORE=file
+QUEUE_CONNECTION=sync
 ```
 
 Untuk membuat `APP_KEY`, jalankan di lokal:
