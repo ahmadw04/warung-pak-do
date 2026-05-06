@@ -51,16 +51,24 @@ php artisan key:generate --show
 
 Salin hasilnya ke variable `APP_KEY` di Railway.
 
-## 5. Pre-Deploy Command
-Di service aplikasi Laravel, buka **Settings** lalu cari bagian **Deploy**.
+## 5. Start Command dan Pre-Deploy Command
+Project ini sudah memiliki file `railway.toml`, jadi Railway dapat membaca konfigurasi deploy otomatis.
 
-Isi **Pre-Deploy Command**:
+Jika ingin mengisi manual di Railway, gunakan nilai berikut.
+
+**Pre-Deploy Command**:
 
 ```bash
 chmod +x ./railway/init-app.sh && sh ./railway/init-app.sh
 ```
 
-Script ini akan menjalankan migration dan cache view/config setiap deploy.
+**Custom Start Command**:
+
+```bash
+php artisan serve --host=0.0.0.0 --port=$PORT
+```
+
+Script pre-deploy akan menjalankan migration dan cache view/config setiap deploy. Start command menjalankan Laravel di port yang disediakan Railway.
 
 ## 6. Generate Public Domain
 Secara default service Railway belum bisa dibuka publik.

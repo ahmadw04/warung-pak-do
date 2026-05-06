@@ -70,18 +70,24 @@ php artisan key:generate --show
 
 Copy hasilnya ke variable `APP_KEY`.
 
-## 6. Isi Pre-Deploy Command
-Di Railway:
-1. Buka service Laravel.
-2. Masuk **Settings**.
-3. Cari bagian **Deploy**.
-4. Isi **Pre-Deploy Command**:
+## 6. Start Command dan Pre-Deploy Command
+Project ini sudah memiliki file `railway.toml`, jadi Railway dapat membaca konfigurasi deploy otomatis.
+
+Jika ingin mengisi manual di Railway, gunakan nilai berikut.
+
+**Pre-Deploy Command**:
 
 ```bash
 chmod +x ./railway/init-app.sh && sh ./railway/init-app.sh
 ```
 
-Command ini membuat tabel database otomatis di Neon.
+**Custom Start Command**:
+
+```bash
+php artisan serve --host=0.0.0.0 --port=$PORT
+```
+
+Pre-deploy command membuat tabel database otomatis di Neon. Start command menjalankan Laravel di port yang disediakan Railway.
 
 ## 7. Buat Link Website
 Di Railway:
