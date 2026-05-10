@@ -87,7 +87,9 @@ chmod +x ./railway/init-app.sh && sh ./railway/init-app.sh
 php artisan serve --host=0.0.0.0 --port=$PORT
 ```
 
-Pre-deploy command membuat tabel database otomatis di Neon. Start command menjalankan Laravel di port yang disediakan Railway.
+Pre-deploy command membuat ulang tabel database otomatis di Neon. Start command menjalankan Laravel di port yang disediakan Railway.
+
+Catatan: `migrate:fresh` cocok untuk demo/tugas karena database dibuat bersih setiap deploy. Data produk yang ditambahkan lewat website akan hilang kalau redeploy.
 
 ## 7. Buat Link Website
 Di Railway:

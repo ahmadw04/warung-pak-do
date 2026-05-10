@@ -68,7 +68,9 @@ chmod +x ./railway/init-app.sh && sh ./railway/init-app.sh
 php artisan serve --host=0.0.0.0 --port=$PORT
 ```
 
-Script pre-deploy akan menjalankan migration dan cache view/config setiap deploy. Start command menjalankan Laravel di port yang disediakan Railway.
+Script pre-deploy akan membuat ulang tabel database dan cache view/config setiap deploy. Start command menjalankan Laravel di port yang disediakan Railway.
+
+Catatan: `migrate:fresh` cocok untuk demo/tugas karena database dibuat bersih setiap deploy. Data produk yang ditambahkan lewat website akan hilang kalau redeploy.
 
 ## 6. Generate Public Domain
 Secara default service Railway belum bisa dibuka publik.
