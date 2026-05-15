@@ -181,7 +181,8 @@
         .feature-grid,
         .delivery-grid,
         .contact-grid,
-        .skills-grid {
+        .skills-grid,
+        .menu-grid {
             display: grid;
             gap: 14px;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -190,7 +191,8 @@
         .feature-item,
         .delivery-item,
         .contact-item,
-        .skill-item {
+        .skill-item,
+        .menu-card {
             background: var(--panel);
             border: 1px solid var(--line);
             border-radius: 8px;
@@ -203,6 +205,80 @@
             display: block;
             font-size: 18px;
             margin-bottom: 6px;
+        }
+
+        .menu-page-hero {
+            background: #0c5f31;
+            border: 6px solid #f7cf7e;
+            border-radius: 8px;
+            color: #f7cf7e;
+            margin-bottom: 22px;
+            padding: 26px;
+        }
+
+        .menu-page-hero h1 {
+            font-size: 48px;
+            letter-spacing: 0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .menu-page-hero p {
+            color: #fff1c0;
+        }
+
+        .menu-grid {
+            align-items: start;
+        }
+
+        .menu-card {
+            background: #0c5f31;
+            border-color: #f7cf7e;
+            border-width: 3px;
+            color: #ffe29a;
+        }
+
+        .menu-card h2 {
+            background: #f7cf7e;
+            color: #0c5f31;
+            display: inline-block;
+            font-size: 22px;
+            margin: 0 0 12px;
+            padding: 4px 10px;
+            text-transform: uppercase;
+        }
+
+        .menu-list {
+            display: grid;
+            gap: 8px;
+        }
+
+        .menu-row {
+            align-items: baseline;
+            display: grid;
+            gap: 12px;
+            grid-template-columns: minmax(0, 1fr) auto;
+        }
+
+        .menu-name {
+            color: #fff1c0;
+            font-weight: 700;
+        }
+
+        .menu-price {
+            color: #ffe29a;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .menu-note {
+            background: rgba(247, 207, 126, 0.12);
+            border: 1px solid rgba(247, 207, 126, 0.4);
+            border-radius: 8px;
+            color: #fff1c0;
+            font-size: 13px;
+            margin-top: 12px;
+            padding: 10px;
         }
 
         .skills-section {
@@ -390,7 +466,8 @@
             .feature-grid,
             .delivery-grid,
             .contact-grid,
-            .skills-grid {
+            .skills-grid,
+            .menu-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -413,6 +490,7 @@
             </a>
             <nav class="nav-links" aria-label="Navigasi utama">
                 <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">Dashboard</a>
+                <a class="nav-link {{ request()->routeIs('menu') ? 'active' : '' }}" href="{{ route('menu') }}">Menu</a>
                 <a class="nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}" href="{{ route('products.index') }}">Produk</a>
                 <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Kontak</a>
                 <a class="button secondary" href="{{ route('products.create') }}">Tambah Produk</a>

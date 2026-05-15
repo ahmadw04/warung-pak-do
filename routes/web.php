@@ -29,4 +29,10 @@ Route::get('/', function () {
 
 Route::view('/kontak', 'contact')->name('contact');
 
+Route::get('/menu', function () {
+    return view('menu', [
+        'menuGroups' => config('warung_menu'),
+    ]);
+})->name('menu');
+
 Route::resource('products', ProductController::class);

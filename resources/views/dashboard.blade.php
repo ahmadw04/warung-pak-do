@@ -8,6 +8,7 @@
             <h1>Dashboard Warung Pak Do</h1>
             <p>Kelola produk warung, pantau stok barang, dan siapkan informasi pemesanan online dalam satu website sederhana.</p>
             <div class="actions" style="margin-top: 18px;">
+                <a class="button secondary" href="{{ route('menu') }}">Lihat Menu</a>
                 <a class="button secondary" href="{{ route('products.index') }}">Lihat Produk</a>
                 <a class="button" href="{{ route('contact') }}">Kontak Warung</a>
             </div>
@@ -32,6 +33,29 @@
         <div class="stat">
             <span class="muted">Total Stok</span>
             <strong>{{ $totalStock }}</strong>
+        </div>
+    </section>
+
+    <section class="section-title">
+        <div>
+            <h2>Daftar Menu Makanan</h2>
+            <p class="muted">Menu utama Warung Pak Do berdasarkan daftar harga terbaru.</p>
+        </div>
+        <a class="button secondary" href="{{ route('menu') }}">Lihat Semua Menu</a>
+    </section>
+
+    <section class="feature-grid">
+        <div class="feature-item">
+            <strong>Nasi Goreng</strong>
+            <p class="muted">Mulai Rp 11.000, tersedia pilihan biasa, mawut, telur, ati, jawa, spesial, pete, dan ayam geprek.</p>
+        </div>
+        <div class="feature-item">
+            <strong>Mie dan Ayam</strong>
+            <p class="muted">Bakmi, kwetiau, bihun, ayam geprek, ayam saus, dan ayam goreng.</p>
+        </div>
+        <div class="feature-item">
+            <strong>Minuman</strong>
+            <p class="muted">Teh, jeruk, lemon tea, chocolatos, milo, dan white coffe.</p>
         </div>
     </section>
 
