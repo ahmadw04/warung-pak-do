@@ -3,18 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\View\View;
 
 class ProductController extends Controller
 {
     public function index(): View
     {
-        $products = Product::latest()->paginate(8);
-        $totalProducts = Product::count();
-        $activeProducts = Product::where('is_active', true)->count();
-        $totalStock = Product::sum('stock');
+        try {
+            $products = Product::latest()->paginate(8);
+            $totalProducts = Product::count();
+            $activeProducts = Product::where('is_active', true)->count();
+            $totalStock = Product::sum('stock');
+        } catch (QueryException) {
+            $products = new LengthAwarePaginator([], 0, 8);
+            $totalProducts = 0;
+            $activeProducts = 0;
+            $totalStock = 0;
+        }
 
         return view('products.index', compact(
             'products',
